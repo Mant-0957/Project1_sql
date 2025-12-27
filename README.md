@@ -1,63 +1,54 @@
 # Project1_sql
 
-A SQL database project focused on building and querying a relational database to analyze meaningful data using SQL.  
-This repository contains SQL scripts, database schema, queries, and results demonstrating practical SQL skills such as table creation, data manipulation, joins, aggregations, and data analysis.
+This repository contains a SQL database project designed for an **e-commerce / order management system**.  
+It stores information about customers, their orders, products available for sale, and detailed records of the products included in each order. :contentReference[oaicite:1]{index=1}
 
 ---
 
-## 📌 Project Overview
+## 📌 Project Description
 
-This project showcases the use of **Structured Query Language (SQL)** to perform various database operations and extract insights from relational data. It includes:
+The goal of this project is to **design a relational database** and write SQL scripts to create tables, insert data, and run queries that demonstrate key database operations.  
+This project highlights practical SQL skills including:
 
-- Creating and defining database tables
-- Inserting and updating data
-- Writing SQL queries to retrieve and analyze information
-- Exploring relationships between tables using joins
-- Using aggregate functions, filtering & sorting
-
-This repository is especially suitable for beginners and intermediate learners looking to strengthen their SQL and database management skills. :contentReference[oaicite:0]{index=0}
+- Creating tables and defining relationships
+- Inserting and managing data
+- Querying data with JOINs and filters
+- Aggregating and analyzing data
 
 ---
 
-## 🧠 Technologies & Tools
+## 📂 Repository Structure
 
-The following tools & technologies were used:
-
-- **SQL** (Structured Query Language)
-- Database System: `<e.g., MySQL / SQLite / PostgreSQL>`
-- Optional: `<Tool for running the SQL e.g., DB Browser for SQLite / MySQL Workbench>`
 
 ---
 
-## 📁 Repository Structure
+## 🛠️ Tools & Technologies Used
+
+- **SQL** — Structured Query Language
+- Database engine of your choice (e.g., MySQL, PostgreSQL, SQLite)
+
+*(The SQL script can be run in any standard SQL environment)*
 
 ---
 
-## 🚀 Setup & Usage
+## 🚀 Getting Started
 
-### 1. Clone the repository
+To use the project:
 
-```bash
-git clone https://github.com/Mant-0957/Project1_sql.git
-cd Project1_sql
-sqlite3 your_database.db < schema.sql
-sqlite3 your_database.db < data.sql
-sqlite3 your_database.db < queries.sql
--- Retrieve all customers
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Mant-0957/Project1_sql.git
+   cd Project1_sql
+-- Example: List all customers
 SELECT * FROM Customers;
 
--- Count number of orders per customer
+-- Example: Count orders per customer
 SELECT customer_id, COUNT(*) AS total_orders
 FROM Orders
 GROUP BY customer_id;
 
--- Join customers and orders data
+-- Example: Join customers with their orders
 SELECT c.customer_name, o.order_date
 FROM Customers c
 JOIN Orders o
-    ON c.customer_id = o.customer_id;
-
-
-
-
-
+  ON c.customer_id = o.customer_id;
